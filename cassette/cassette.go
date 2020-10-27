@@ -180,8 +180,7 @@ func (c *Cassette) GetInteraction(r *http.Request) (*Interaction, error) {
 	defer c.Mu.Unlock()
 	for _, i := range c.Interactions {
 		log.Printf("@@@@@@ matched: %t i_url: %s already_replayed: %t", c.Matcher(r, i.Request), i.URL, i.replayed)
-		if !i.replayed && c.Matcher(r, i.Request) {
-			i.replayed = true
+		if c.Matcher(r, i.Request) {
 			return i, nil
 		}
 	}
