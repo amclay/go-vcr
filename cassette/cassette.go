@@ -85,8 +85,6 @@ type Response struct {
 
 	// Response duration (something like "100ms" or "10s")
 	Duration string `yaml:"duration"`
-
-	replayed bool
 }
 
 // Interaction type contains a pair of request/response for a
@@ -174,12 +172,9 @@ func (c *Cassette) AddInteraction(i *Interaction) {
 
 // GetInteraction retrieves a recorded request/response interaction
 func (c *Cassette) GetInteraction(r *http.Request) (*Interaction, error) {
-	log.Printf("@@@@@@ starting matches length: %d", len(c.Interactions))
-
 	c.Mu.Lock()
 	defer c.Mu.Unlock()
 	for _, i := range c.Interactions {
-		log.Printf("@@@@@@ matched: %t i_url: %s already_replayed: %t", c.Matcher(r, i.Request), i.URL, i.replayed)
 		if c.Matcher(r, i.Request) {
 			return i, nil
 		}
