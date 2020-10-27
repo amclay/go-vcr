@@ -1,4 +1,4 @@
-// Copyright (c) 2015-2016 Marin Atanasov Nikolov <dnaeon@gmail.com>
+// Copyright (c) 2015-2016 Marin Atanasov Nikolov <amclay@gmail.com>
 // Copyright (c) 2016 David Jack <davars@gmail.com>
 // All rights reserved.
 //
@@ -41,8 +41,8 @@ import (
 
 	"bytes"
 
-	"github.com/dnaeon/go-vcr/cassette"
-	"github.com/dnaeon/go-vcr/recorder"
+	"github.com/amclay/go-vcr/cassette"
+	"github.com/amclay/go-vcr/recorder"
 )
 
 type recordTest struct {

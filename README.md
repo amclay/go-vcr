@@ -1,9 +1,9 @@
 ## go-vcr
 
-[![Build Status](https://travis-ci.org/dnaeon/go-vcr.svg)](https://travis-ci.org/dnaeon/go-vcr)
-[![GoDoc](https://godoc.org/github.com/dnaeon/go-vcr?status.svg)](https://godoc.org/github.com/dnaeon/go-vcr)
-[![Go Report Card](https://goreportcard.com/badge/github.com/dnaeon/go-vcr)](https://goreportcard.com/report/github.com/dnaeon/go-vcr)
-[![codecov](https://codecov.io/gh/dnaeon/go-vcr/branch/master/graph/badge.svg)](https://codecov.io/gh/dnaeon/go-vcr)
+[![Build Status](https://travis-ci.org/amclay/go-vcr.svg)](https://travis-ci.org/amclay/go-vcr)
+[![GoDoc](https://godoc.org/github.com/amclay/go-vcr?status.svg)](https://godoc.org/github.com/amclay/go-vcr)
+[![Go Report Card](https://goreportcard.com/badge/github.com/amclay/go-vcr)](https://goreportcard.com/report/github.com/amclay/go-vcr)
+[![codecov](https://codecov.io/gh/amclay/go-vcr/branch/master/graph/badge.svg)](https://codecov.io/gh/amclay/go-vcr)
 
 `go-vcr` simplifies testing by recording your HTTP interactions and
 replaying them in future runs in order to provide fast, deterministic
@@ -16,7 +16,7 @@ and accurate testing of your code.
 Install `go-vcr` by executing the command below:
 
 ```bash
-$ go get github.com/dnaeon/go-vcr/recorder
+$ go get github.com/amclay/go-vcr/recorder
 ```
 
 ## Usage
@@ -34,7 +34,7 @@ import (
 	"log"
 	"time"
 
-	"github.com/dnaeon/go-vcr/recorder"
+	"github.com/amclay/go-vcr/recorder"
 
 	"github.com/coreos/etcd/client"
 	"golang.org/x/net/context"

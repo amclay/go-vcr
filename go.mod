@@ -1,4 +1,4 @@
-module github.com/dnaeon/go-vcr
+module github.com/amclay/go-vcr
 
 go 1.15
 

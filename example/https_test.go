@@ -1,4 +1,4 @@
-// Copyright (c) 2016 Marin Atanasov Nikolov <dnaeon@gmail.com>
+// Copyright (c) 2016 Marin Atanasov Nikolov <amclay@gmail.com>
 // All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
@@ -30,7 +30,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/dnaeon/go-vcr/recorder"
+	"github.com/amclay/go-vcr/recorder"
 )
 
 func TestHTTPS(t *testing.T) {
