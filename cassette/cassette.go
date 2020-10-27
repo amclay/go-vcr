@@ -1,4 +1,4 @@
-// Copyright (c) 2015 Marin Atanasov Nikolov <amclay@gmail.com>
+// Copyright (c) 2015 Marin Atanasov Nikolov <dnaeon@gmail.com>
 // All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
@@ -28,6 +28,7 @@ import (
 	"errors"
 	"fmt"
 	"io/ioutil"
+	"log"
 	"net/http"
 	"net/url"
 	"os"
@@ -173,9 +174,12 @@ func (c *Cassette) AddInteraction(i *Interaction) {
 
 // GetInteraction retrieves a recorded request/response interaction
 func (c *Cassette) GetInteraction(r *http.Request) (*Interaction, error) {
+	log.Printf("@@@@@@ starting matches length: %d", len(c.Interactions))
+
 	c.Mu.Lock()
 	defer c.Mu.Unlock()
 	for _, i := range c.Interactions {
+		log.Printf("@@@@@@ matched: %t i_url: %s already_replayed: %t", c.Matcher(r, i.Request), i.URL, i.replayed)
 		if !i.replayed && c.Matcher(r, i.Request) {
 			i.replayed = true
 			return i, nil
